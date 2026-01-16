@@ -226,6 +226,325 @@
             box-shadow: var(--shadow);
         }
 
+        /* Demo Section */
+        .demo-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        }
+
+        .demo-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 992px) {
+            .demo-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        .input-area, .output-area {
+            background: white;
+            padding: 40px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .input-area h3, .output-area h3 {
+            color: var(--secondary);
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+        }
+
+        #promptInput {
+            width: 100%;
+            padding: 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: var(--radius);
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            margin-bottom: 25px;
+            resize: vertical;
+            transition: all 0.3s;
+            line-height: 1.5;
+        }
+
+        #promptInput:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(253, 183, 80, 0.1);
+        }
+
+        #promptInput::placeholder {
+            color: #999;
+        }
+
+        .style-options {
+            margin-bottom: 30px;
+        }
+
+        .style-options h4 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .style-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .style-btn {
+            padding: 12px 24px;
+            background: #f0f0f0;
+            border: none;
+            border-radius: 30px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+            color: var(--dark);
+        }
+
+        .style-btn.active {
+            background: var(--gradient);
+            color: var(--secondary);
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(253, 183, 80, 0.2);
+        }
+
+        .style-btn:hover:not(.active) {
+            background: #e0e0e0;
+            transform: translateY(-2px);
+        }
+
+        #generateBtn {
+            width: 100%;
+            padding: 18px;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        #generateBtn i {
+            margin-right: 10px;
+        }
+
+        .advanced-options {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: var(--radius);
+            margin-top: 20px;
+        }
+
+        .advanced-options h4 {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .option-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .option-row label {
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .option-row select {
+            padding: 8px 15px;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            background: white;
+            font-family: 'Poppins', sans-serif;
+            width: 150px;
+        }
+
+        .image-preview {
+            width: 100%;
+            min-height: 350px;
+            background: #f8f9fa;
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            overflow: hidden;
+            border: 2px dashed #e0e0e0;
+            transition: border-color 0.3s;
+        }
+
+        .image-preview.has-image {
+            border-color: var(--primary);
+            border-style: solid;
+        }
+
+        .placeholder-image {
+            text-align: center;
+            color: var(--gray);
+            padding: 20px;
+        }
+
+        .placeholder-image i {
+            font-size: 4rem;
+            margin-bottom: 15px;
+            color: #e0e0e0;
+        }
+
+        .placeholder-hint {
+            font-size: 0.9rem;
+            margin-top: 10px;
+            color: #999;
+            font-style: italic;
+        }
+
+        .image-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: var(--radius);
+            margin-bottom: 20px;
+        }
+
+        .image-info p {
+            display: flex;
+            align-items: center;
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .image-info i {
+            color: var(--primary);
+            margin-right: 8px;
+            width: 20px;
+        }
+
+        .image-actions {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .image-actions .btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .generation-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .stat {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: var(--radius);
+        }
+
+        .stat i {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        .stat h4 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            color: var(--dark);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .stat p {
+            font-size: 0.9rem;
+            margin: 0;
+            color: var(--gray);
+        }
+
+        .generated-image-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .generated-image {
+            max-width: 100%;
+            max-height: 280px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .generated-image-details {
+            margin-top: 15px;
+        }
+
+        .generated-image-details h4 {
+            color: var(--dark);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .generated-image-details p {
+            font-size: 0.8rem;
+            color: var(--gray);
+            margin: 5px 0;
+        }
+
+        .watermark {
+            font-size: 0.7rem;
+            color: var(--primary);
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        /* Loading Animation */
+        .loading-spinner {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
         /* Features Section */
         .features {
             padding: 100px 0;
@@ -427,6 +746,38 @@
             font-size: 0.9rem;
         }
 
+        /* Notification */
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--gradient);
+            color: var(--secondary);
+            padding: 15px 25px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            z-index: 10000;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            animation: slideIn 0.3s ease;
+        }
+
+        .notification i {
+            font-size: 1.2rem;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideOut {
+            from { transform: translateX(0); opacity: 1; }
+            to { transform: translateX(100%); opacity: 0; }
+        }
+
         /* Responsive Styles */
         @media (max-width: 992px) {
             h1 {
@@ -500,6 +851,14 @@
             .footer-column {
                 flex: 100%;
             }
+            
+            .image-actions {
+                flex-direction: column;
+            }
+            
+            .generation-stats {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 576px) {
@@ -511,12 +870,25 @@
                 font-size: 1.8rem;
             }
             
-            .hero, .features, .how-it-works, .cta {
+            .hero, .features, .how-it-works, .cta, .demo-section {
                 padding: 70px 0;
             }
             
             .cta h2 {
                 font-size: 2.2rem;
+            }
+            
+            .input-area, .output-area {
+                padding: 25px;
+            }
+            
+            .style-buttons {
+                justify-content: center;
+            }
+            
+            .style-btn {
+                padding: 10px 20px;
+                font-size: 0.85rem;
             }
         }
     </style>
@@ -536,11 +908,10 @@
             
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
+                <li><a href="#demo">Try AI Generator</a></li>
                 <li><a href="#features">Features</a></li>
                 <li><a href="#how-it-works">How It Works</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#" class="btn btn-primary">Try For Free</a></li>
+                <li><a href="#" class="btn btn-primary">Sign Up Free</a></li>
             </ul>
         </div>
     </header>
@@ -552,17 +923,118 @@
                 <h1>Transform Your Imagination with <span>Golden Dust AI</span></h1>
                 <p>Create stunning, high-quality images from simple text descriptions using our advanced artificial intelligence. No design skills required - just describe your vision and let Golden Dust work its magic.</p>
                 <div class="hero-buttons">
-                    <a href="#" class="btn btn-primary">Start Creating Now</a>
+                    <a href="#demo" class="btn btn-primary">Try Generator Now</a>
                     <a href="#how-it-works" class="btn btn-secondary">See How It Works</a>
                 </div>
             </div>
             <div class="hero-image">
-                <!-- Placeholder for AI generated image -->
                 <div style="width: 100%; max-width: 500px; height: 400px; background: linear-gradient(135deg, #1A1A2E 0%, #16213E 100%); border-radius: var(--radius); display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; padding: 20px; box-shadow: var(--shadow);">
                     <i class="fas fa-image" style="font-size: 4rem; margin-bottom: 20px; color: var(--primary);"></i>
                     <h3 style="color: white; margin-bottom: 10px;">AI Generated Art</h3>
                     <p style="text-align: center; color: rgba(255,255,255,0.7);">"A majestic golden phoenix rising from ashes at sunrise"</p>
                     <p style="font-size: 0.8rem; margin-top: 20px; color: var(--primary);">Generated by Golden Dust AI</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Image Generator Demo -->
+    <section class="demo-section" id="demo">
+        <div class="container">
+            <div class="section-title">
+                <h2>Try Golden Dust AI Generator</h2>
+                <p>Experience the power of AI image generation right here</p>
+            </div>
+            
+            <div class="demo-container">
+                <div class="input-area">
+                    <h3>Describe Your Image</h3>
+                    <textarea id="promptInput" placeholder="Example: A majestic golden dragon flying over mountains at sunset, digital art style..." rows="4"></textarea>
+                    
+                    <div class="style-options">
+                        <h4>Select Style:</h4>
+                        <div class="style-buttons">
+                            <button class="style-btn active" data-style="realistic">Realistic</button>
+                            <button class="style-btn" data-style="fantasy">Fantasy</button>
+                            <button class="style-btn" data-style="anime">Anime</button>
+                            <button class="style-btn" data-style="cyberpunk">Cyberpunk</button>
+                            <button class="style-btn" data-style="painting">Painting</button>
+                        </div>
+                    </div>
+                    
+                    <button id="generateBtn" class="btn btn-primary">
+                        <i class="fas fa-magic"></i> Generate Image
+                    </button>
+                    
+                    <button id="exampleBtn" class="btn btn-secondary">
+                        <i class="fas fa-lightbulb"></i> Get Example Prompt
+                    </button>
+                    
+                    <div class="advanced-options">
+                        <h4>Advanced Options:</h4>
+                        <div class="option-row">
+                            <label>Resolution:</label>
+                            <select id="resolutionSelect">
+                                <option value="512x512">512x512</option>
+                                <option value="1024x1024" selected>1024x1024</option>
+                                <option value="2048x2048">2048x2048</option>
+                            </select>
+                        </div>
+                        <div class="option-row">
+                            <label>Quality:</label>
+                            <select id="qualitySelect">
+                                <option value="standard">Standard</option>
+                                <option value="high" selected>High</option>
+                                <option value="ultra">Ultra</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="output-area">
+                    <h3>Generated Image</h3>
+                    <div class="image-preview" id="imagePreview">
+                        <div class="placeholder-image">
+                            <i class="fas fa-image"></i>
+                            <p>Your generated image will appear here</p>
+                            <p class="placeholder-hint">Enter a description and click "Generate Image"</p>
+                        </div>
+                    </div>
+                    
+                    <div class="image-info" id="imageInfo">
+                        <p><i class="fas fa-palette"></i> <span id="styleDisplay">Style: Realistic</span></p>
+                        <p><i class="fas fa-expand-arrows-alt"></i> <span id="resolutionDisplay">Resolution: 1024x1024</span></p>
+                        <p><i class="fas fa-clock"></i> <span id="timeDisplay">Time: 15-30 seconds</span></p>
+                    </div>
+                    
+                    <div class="image-actions">
+                        <button id="downloadBtn" class="btn btn-secondary" disabled>
+                            <i class="fas fa-download"></i> Download
+                        </button>
+                        <button id="shareBtn" class="btn btn-secondary" disabled>
+                            <i class="fas fa-share"></i> Share
+                        </button>
+                        <button id="regenerateBtn" class="btn btn-secondary" disabled>
+                            <i class="fas fa-redo"></i> Regenerate
+                        </button>
+                    </div>
+                    
+                    <div class="generation-stats">
+                        <div class="stat">
+                            <i class="fas fa-bolt"></i>
+                            <div>
+                                <h4>Fast Generation</h4>
+                                <p>15-30 seconds average</p>
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <h4>Commercial Use</h4>
+                                <p>All images are royalty-free</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -654,7 +1126,7 @@
     </section>
 
     <!-- Footer -->
-    <footer id="contact">
+    <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
@@ -674,10 +1146,10 @@
                 <div class="footer-column">
                     <h3>Product</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Features</a></li>
+                        <li><a href="#demo">AI Generator</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
                         <li><a href="#">Pricing</a></li>
-                        <li><a href="#">Use Cases</a></li>
-                        <li><a href="#">API Access</a></li>
                     </ul>
                 </div>
                 
@@ -751,6 +1223,342 @@
                     });
                 }
             });
+        });
+
+        // AI Image Generator JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            // Elements
+            const generateBtn = document.getElementById('generateBtn');
+            const exampleBtn = document.getElementById('exampleBtn');
+            const promptInput = document.getElementById('promptInput');
+            const imagePreview = document.getElementById('imagePreview');
+            const downloadBtn = document.getElementById('downloadBtn');
+            const shareBtn = document.getElementById('shareBtn');
+            const regenerateBtn = document.getElementById('regenerateBtn');
+            const styleButtons = document.querySelectorAll('.style-btn');
+            const resolutionSelect = document.getElementById('resolutionSelect');
+            const qualitySelect = document.getElementById('qualitySelect');
+            const styleDisplay = document.getElementById('styleDisplay');
+            const resolutionDisplay = document.getElementById('resolutionDisplay');
+            const timeDisplay = document.getElementById('timeDisplay');
+            
+            // State variables
+            let currentStyle = 'realistic';
+            let currentPrompt = '';
+            let generatedImages = [];
+            let currentImageIndex = 0;
+            
+            // Sample images for demonstration
+            const sampleImages = {
+                realistic: [
+                    'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&auto=format&fit=crop&q=60',
+                    'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&auto=format&fit=crop&q=60',
+                    'https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&auto=format&fit=crop&q=60'
+                ],
+                fantasy: [
+                    'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&auto=format&fit=crop&q=60',
+                    'https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?w=800&auto=format&fit=crop&q=60',
+                    'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&auto=format&fit=crop&q=60'
+                ],
+                anime: [
+                    'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&auto=format&fit=crop&q=60',
+                    'https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=800&auto=format&fit=crop&q=60',
+                    'https://images.unsplash.com/photo-1579546929662-711aa81148cf?w=800&auto=format&fit=crop&q=60'
+                ],
+                cyberpunk: [
+                    'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&auto=format&fit=crop&q=60',
+                    'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&auto=format&fit=crop&q=60',
+                    'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&auto=format&fit=crop&q=60'
+                ],
+                painting: [
+                    'https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=800&auto=format&fit=crop&q=60',
+                    'https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?w=800&auto=format&fit=crop&q=60',
+                    'https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&auto=format&fit=crop&q=60'
+                ]
+            };
+            
+            // Example prompts
+            const examplePrompts = [
+                "A majestic golden dragon flying over snow-capped mountains at sunset, fantasy art style",
+                "Cyberpunk city with neon lights and flying cars in the rain, cinematic",
+                "Beautiful Indian princess in traditional dress, digital painting style",
+                "Futuristic space station orbiting a purple planet, realistic 3D render",
+                "Magical forest with glowing mushrooms and fairies, fantasy art",
+                "Golden retriever puppy playing in a field of sunflowers, photorealistic",
+                "Ancient temple hidden in jungle with waterfalls, adventure style",
+                "Steampunk airship flying over Victorian London at dusk",
+                "Underwater city with glowing corals and sea creatures, fantasy",
+                "Samurai warrior standing on mountain peak at sunrise, epic"
+            ];
+            
+            // Style selection
+            styleButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    styleButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    currentStyle = this.dataset.style;
+                    styleDisplay.textContent = `Style: ${this.textContent}`;
+                });
+            });
+            
+            // Resolution change
+            resolutionSelect.addEventListener('change', function() {
+                resolutionDisplay.textContent = `Resolution: ${this.value}`;
+            });
+            
+            // Quality change
+            qualitySelect.addEventListener('change', function() {
+                const times = {
+                    'standard': '10-15 seconds',
+                    'high': '15-30 seconds',
+                    'ultra': '30-60 seconds'
+                };
+                timeDisplay.textContent = `Time: ${times[this.value]}`;
+            });
+            
+            // Example prompt button
+            exampleBtn.addEventListener('click', function() {
+                const randomPrompt = examplePrompts[Math.floor(Math.random() * examplePrompts.length)];
+                promptInput.value = randomPrompt;
+                showNotification('Example prompt added! Try generating it.', 'info');
+                promptInput.focus();
+            });
+            
+            // Generate Image
+            generateBtn.addEventListener('click', function() {
+                currentPrompt = promptInput.value.trim();
+                
+                if (!currentPrompt) {
+                    showNotification('Please enter a description for your image', 'warning');
+                    promptInput.focus();
+                    return;
+                }
+                
+                if (currentPrompt.length < 10) {
+                    showNotification('Please provide a more detailed description (at least 10 characters)', 'warning');
+                    return;
+                }
+                
+                // Show loading state
+                showLoading();
+                
+                // Calculate estimated time
+                const quality = qualitySelect.value;
+                const timeEstimates = {
+                    'standard': [8, 12],
+                    'high': [12, 25],
+                    'ultra': [25, 50]
+                };
+                
+                const [minTime, maxTime] = timeEstimates[quality];
+                const estimatedTime = Math.floor(Math.random() * (maxTime - minTime)) + minTime;
+                
+                // Update time display
+                timeDisplay.textContent = `Time: ${estimatedTime} seconds`;
+                
+                // Simulate generation process
+                let progress = 0;
+                const progressInterval = setInterval(() => {
+                    progress += 100 / (estimatedTime * 2);
+                    updateLoadingProgress(progress);
+                    
+                    if (progress >= 100) {
+                        clearInterval(progressInterval);
+                        // Show generated image
+                        setTimeout(() => showGeneratedImage(), 500);
+                    }
+                }, 500);
+            });
+            
+            // Regenerate Image
+            regenerateBtn.addEventListener('click', function() {
+                if (!currentPrompt) return;
+                
+                showNotification('Creating variations of your image...', 'info');
+                showLoading();
+                
+                setTimeout(() => {
+                    showGeneratedImage();
+                    showNotification('New variation generated!', 'success');
+                }, 2000);
+            });
+            
+            // Download Image
+            downloadBtn.addEventListener('click', function() {
+                if (generatedImages.length === 0) return;
+                
+                showNotification('Preparing download...', 'info');
+                
+                // Create temporary canvas for download
+                setTimeout(() => {
+                    const link = document.createElement('a');
+                    link.href = generatedImages[currentImageIndex];
+                    link.download = `golden-dust-ai-${Date.now()}.jpg`;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    
+                    showNotification('Image downloaded successfully!', 'success');
+                }, 1000);
+            });
+            
+            // Share Image
+            shareBtn.addEventListener('click', function() {
+                if (generatedImages.length === 0) return;
+                
+                const shareText = `I created this image with Golden Dust AI: "${currentPrompt.substring(0, 80)}${currentPrompt.length > 80 ? '...' : ''}"`;
+                const shareUrl = window.location.href;
+                
+                if (navigator.share) {
+                    navigator.share({
+                        title: 'My Golden Dust AI Creation',
+                        text: shareText,
+                        url: shareUrl,
+                    })
+                    .then(() => showNotification('Image shared successfully!', 'success'))
+                    .catch(() => showNotification('Sharing cancelled', 'info'));
+                } else {
+                    // Fallback for desktop
+                    navigator.clipboard.writeText(`${shareText}\n\n${shareUrl}`)
+                        .then(() => showNotification('Image link copied to clipboard!', 'success'))
+                        .catch(() => {
+                            // Old school method
+                            const textArea = document.createElement('textarea');
+                            textArea.value = `${shareText}\n\n${shareUrl}`;
+                            document.body.appendChild(textArea);
+                            textArea.select();
+                            document.execCommand('copy');
+                            document.body.removeChild(textArea);
+                            showNotification('Link copied to clipboard!', 'success');
+                        });
+                }
+            });
+            
+            // Helper Functions
+            function showLoading() {
+                imagePreview.innerHTML = `
+                    <div class="loading-spinner" style="display: flex; padding: 40px;">
+                        <div class="spinner"></div>
+                        <h3>Generating your image...</h3>
+                        <p>This usually takes 15-30 seconds</p>
+                        <div class="progress-bar" style="width: 100%; height: 8px; background: #e0e0e0; border-radius: 4px; margin-top: 20px; overflow: hidden;">
+                            <div id="progressFill" style="width: 0%; height: 100%; background: var(--gradient); border-radius: 4px; transition: width 0.3s;"></div>
+                        </div>
+                        <p id="progressText" style="margin-top: 10px; font-size: 0.9rem;">Initializing AI model...</p>
+                    </div>
+                `;
+                
+                // Disable buttons during generation
+                generateBtn.disabled = true;
+                generateBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating...';
+                downloadBtn.disabled = true;
+                shareBtn.disabled = true;
+                regenerateBtn.disabled = true;
+            }
+            
+            function updateLoadingProgress(progress) {
+                const progressFill = document.getElementById('progressFill');
+                const progressText = document.getElementById('progressText');
+                
+                if (progressFill && progressText) {
+                    progressFill.style.width = `${progress}%`;
+                    
+                    if (progress < 30) {
+                        progressText.textContent = 'Processing prompt...';
+                    } else if (progress < 60) {
+                        progressText.textContent = 'Generating image...';
+                    } else if (progress < 90) {
+                        progressText.textContent = 'Enhancing details...';
+                    } else {
+                        progressText.textContent = 'Finalizing image...';
+                    }
+                }
+            }
+            
+            function showGeneratedImage() {
+                // Get a random sample image for the current style
+                const styleImages = sampleImages[currentStyle] || sampleImages.realistic;
+                const randomImage = styleImages[Math.floor(Math.random() * styleImages.length)];
+                
+                // Add to generated images array
+                generatedImages.push(randomImage);
+                currentImageIndex = generatedImages.length - 1;
+                
+                // Display the image
+                imagePreview.innerHTML = `
+                    <div class="generated-image-container">
+                        <img src="${randomImage}" alt="Generated Image" class="generated-image">
+                        <div class="generated-image-details">
+                            <h4>${currentPrompt.substring(0, 40)}${currentPrompt.length > 40 ? '...' : ''}</h4>
+                            <p><i class="fas fa-palette"></i> Style: ${currentStyle}</p>
+                            <p><i class="fas fa-expand-arrows-alt"></i> ${resolutionSelect.value}</p>
+                            <p><i class="fas fa-star"></i> ${qualitySelect.value.charAt(0).toUpperCase() + qualitySelect.value.slice(1)} Quality</p>
+                            <p class="watermark">Generated by Golden Dust AI</p>
+                        </div>
+                    </div>
+                `;
+                
+                imagePreview.classList.add('has-image');
+                
+                // Enable buttons
+                generateBtn.disabled = false;
+                generateBtn.innerHTML = '<i class="fas fa-magic"></i> Generate Image';
+                downloadBtn.disabled = false;
+                shareBtn.disabled = false;
+                regenerateBtn.disabled = false;
+                
+                // Show success notification
+                showNotification('✨ Image generated successfully!', 'success');
+            }
+            
+            function showNotification(message, type = 'info') {
+                // Remove existing notifications
+                const existingNotifications = document.querySelectorAll('.notification');
+                existingNotifications.forEach(notification => {
+                    notification.style.animation = 'slideOut 0.3s ease';
+                    setTimeout(() => notification.remove(), 300);
+                });
+                
+                // Create new notification
+                const notification = document.createElement('div');
+                notification.className = `notification notification-${type}`;
+                
+                // Set icon based on type
+                let icon = 'fa-info-circle';
+                if (type === 'success') icon = 'fa-check-circle';
+                if (type === 'warning') icon = 'fa-exclamation-triangle';
+                if (type === 'error') icon = 'fa-times-circle';
+                
+                notification.innerHTML = `
+                    <i class="fas ${icon}"></i>
+                    <span>${message}</span>
+                `;
+                
+                // Add type-specific styling
+                if (type === 'success') {
+                    notification.style.background = 'linear-gradient(135deg, #4CAF50 0%, #45a049 100%)';
+                    notification.style.color = 'white';
+                } else if (type === 'warning') {
+                    notification.style.background = 'linear-gradient(135deg, #ff9800 0%, #f57c00 100%)';
+                    notification.style.color = 'white';
+                } else if (type === 'error') {
+                    notification.style.background = 'linear-gradient(135deg, #f44336 0%, #d32f2f 100%)';
+                    notification.style.color = 'white';
+                }
+                
+                document.body.appendChild(notification);
+                
+                // Auto remove after 3 seconds
+                setTimeout(() => {
+                    notification.style.animation = 'slideOut 0.3s ease';
+                    setTimeout(() => notification.remove(), 300);
+                }, 3000);
+            }
+            
+            // Initialize
+            styleDisplay.textContent = `Style: Realistic`;
+            resolutionDisplay.textContent = `Resolution: ${resolutionSelect.value}`;
+            timeDisplay.textContent = `Time: 15-30 seconds`;
         });
     </script>
 </body>
